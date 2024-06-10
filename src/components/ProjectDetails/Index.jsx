@@ -1,6 +1,6 @@
 import { CloseRounded, GitHub, LinkedIn } from '@mui/icons-material';
 import { Modal } from '@mui/material';
-import React from 'react'
+import React, { useState } from 'react'
 import styled from 'styled-components'
 
 const Container = styled.div`
@@ -184,6 +184,9 @@ const Button = styled.a`
 
 const ProjectDetails = ({ openModal, setOpenModal }) => {
     const project = openModal?.project;
+
+    
+    
     return (
         <Modal open={true} onClose={() => setOpenModal({ state: false, project: null })}>
             <Container>
@@ -226,8 +229,8 @@ const ProjectDetails = ({ openModal, setOpenModal }) => {
                         </>
                     )}
                     <ButtonGroup>
-                        <Button dull href={project?.github} target='new'>View Code</Button>
-                        <Button href={project?.webapp} target='new'>View Live App</Button>
+                         <Button dull href={project?.github} target='new'>View Code</Button> 
+                        <Button href={project?.webapp} target='new' >View Live App</Button>
                     </ButtonGroup>
                 </Wrapper>
             </Container>

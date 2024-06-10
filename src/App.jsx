@@ -44,7 +44,8 @@ function App() {
      
       
       </Wrapper>
-      <Project openModal={openModal} setOpenModal={setOpenModal} />
+      <Project setOpenModal={setOpenModal} />
+          {openModal.state && <ProjectDetails openModal={openModal} setOpenModal={setOpenModal} />}
       <Wrapper>
       <Education />
       </Wrapper>

@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, {keyframes} from "styled-components";
 
 export const HeroContainer = styled.div`
   background: ${({ theme }) => theme.card_light};
@@ -91,6 +91,14 @@ export const HeroRightContainer = styled.div`
   }
 `;
 
+const flipAnimation = keyframes`
+  0% {
+    transform: rotateY(0);
+  }
+  100% {
+    transform: rotateY(360deg);
+  }
+`;
 export const Img = styled.img`
   position: relative;
   width: 100%;
@@ -99,6 +107,13 @@ export const Img = styled.img`
   max-height: 400px;
   border-radius: 50%;
   border: 2px solid ${({ theme }) => theme.primary};
+  transition: transform 2s ease;  
+
+
+  &:hover {
+    animation: ${flipAnimation} 2s forwards;
+
+  }
 
   @media (max-width: 768px) {
     max-width: 400px;

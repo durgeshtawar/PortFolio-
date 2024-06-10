@@ -2,6 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 
 
+
 const Button = styled.button`
     display: none;
     width: 100%;
@@ -141,7 +142,7 @@ const ProjectCards = ({project,setOpenModal}) => {
                     <Avatar src={member.img}/>
                 ))}
             </Members>
-             <Button>View Project</Button> 
+             <Button onClick={()=>setOpenModal({state: true, project: project})}>View Project</Button> 
         </Card>
     )
 }
